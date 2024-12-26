@@ -3,47 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Recipe App - Home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8ecb5;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #ff7043;
+            color: white;
+            padding: 20px;
             text-align: center;
         }
-        nav {
-            background-color: #007bff;
-            padding: 10px;
-            color: white;
+
+        header .logo {
+            font-size: 28px;
+            font-weight: bold;
         }
+
+        nav {
+            background-color: #ffa270;
+            padding: 10px;
+            text-align: center;
+        }
+
         nav a {
             color: white;
-            text-decoration: none;
             margin: 0 15px;
+            text-decoration: none;
+            font-size: 16px;
         }
+
         nav a:hover {
             text-decoration: underline;
         }
-        .content {
-            margin: 50px auto;
+
+        .hero-section {
+            background-image: url('images/hero-recipe.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        .content h1 {
-            font-size: 2em;
-            color: #333;
+
+        .hero-section h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section button,
+        .recipe-card button {
+            background-color: #f88243; 
+            color: white; 
+            padding: 7px 25px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 18px; 
+            transition: background-color 0.3s ease, transform 0.3s ease; 
+        }
+
+        .hero-section button:hover,
+        .recipe-card button:hover {
+            background-color: #ee6b24; 
+            transform: translateY(-3px); 
+        }
+
+        .hero-section button:focus,
+        .recipe-card button:focus {
+            outline: none; 
+            box-shadow: 0 0 8px rgba(236, 153, 27, 0.5); 
+        }
+
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+        }
+
+        .category-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(219, 120, 27, 0.1);
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .category-card h3 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .popular-recipes {
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .recipe-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .recipe-card h3 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: #ff7043;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #f3c2a8;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">Recipe App</div>
+    </header>
+
     <nav>
-        <a href="home.html">Home</a>
+        <a href="#">Home</a>
         <a href="login.html">Login</a>
         <a href="signup.html">Signup</a>
-        <a href="forgot_password.html">Forgot Password</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="profile.html">Profile</a>
     </nav>
-    <div class="content">
-        <h1>Welcome to the Home Page!</h1>
-        <p>Navigate through the Login and Signup pages to explore the functionality.</p>
-    </div>
+
+    <section class="hero-section">
+        <h2>Discover Delicious Recipes</h2>
+        <p>Quick, easy, and healthy recipes to suit every taste!</p>
+        <button onclick="window.location.href='recipes.html'">Browse Recipes</button>
+    </section>
+
+    <section class="categories">
+        <div class="category-card">
+            <img src="images/quick-recipes.jpg" alt="Quick Recipes">
+            <h3>Quick Recipes</h3>
+        </div>
+        <div class="category-card">
+            <img src="images/vegetarian.jpg" alt="Vegetarian">
+            <h3>Vegetarian</h3>
+        </div>
+        <div class="category-card">
+            <img src="images/desserts.jpg" alt="Desserts">
+            <h3>Desserts</h3>
+        </div>
+    </section>
+
+    <section class="popular-recipes">
+        <div class="recipe-card">
+            <img src="images/recipe1.jpg" alt="Spaghetti Carbonara">
+            <h3>Spaghetti Carbonara</h3>
+            <button onclick="window.location.href='recipe-details.html'">View Recipe</button>
+        </div>
+        <div class="recipe-card">
+            <img src="images/recipe2.jpg" alt="Classic Burger">
+            <h3>Classic Burger</h3>
+            <button onclick="window.location.href='recipe-detail-burger.html'">View Recipe</button>
+        </div>
+        <div class="recipe-card">
+            <img src="images/recipe3.jpg" alt="Vegetable Stir Fry">
+            <h3>Vegetable Stir Fry</h3>
+            <button onclick="window.location.href='recipe-vegies.html'">View Recipe</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Recipe App</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+    </footer>
 </body>
 </html>
