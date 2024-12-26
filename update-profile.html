@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile - Recipe App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Global Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8ecb5;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff7043;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #ffa270;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #ff5722;
+            color: white;
+        }
+
+        .update-profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .update-profile-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .update-profile-card h2 {
+            text-align: center;
+            color: #ff7043;
+            margin-bottom: 1.5rem;
+        }
+
+        .update-profile-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .update-profile-form input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .update-profile-form button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #ff7043;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .update-profile-form button:hover {
+            background-color: #ff5722;
+        }
+
+        footer {
+            background-color: #ffa270;
+            text-align: center;
+            padding: 0.1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Recipe App</div>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="profile.html">Profile</a>
+        <a href="videos.html">Video</a>
+        <a href="suggestions.html">Suggestion</a>
+    </nav>
+
+    <section class="update-profile-container">
+        <div class="update-profile-card">
+            <h2>Update Profile</h2>
+            <form class="update-profile-form" id="update-profile-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter a new password" required>
+
+                <button type="submit">Update Profile</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Recipe App</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+    </footer>
+
+    <script>
+        document.getElementById("update-profile-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission to keep page from refreshing
+
+            // Collect form data
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Simple validation
+            if (name && email && username && password) {
+                // Store the updated profile information in localStorage
+                localStorage.setItem("name", name);
+                localStorage.setItem("email", email);
+                localStorage.setItem("username", username);
+
+                // Simulate a successful update (you can send this data to your server or API here)
+                alert("Profile updated successfully!");
+
+                // Redirect to profile page
+                window.location.href = "profile.html";
+            } else {
+                alert("Please fill in all the fields.");
+            }
+        });
+    </script>
+</body>
+</html>

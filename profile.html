@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Recipe App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8ecb5;
+            margin: 0;
+            padding: 0;
+        }
+    
+        nav {
+            background-color: #fd8f53;
+            color: white;
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+    
+        nav .links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+    
+        nav .links a:hover {
+            color: #ffc107;
+        }
+    
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            padding: 20px;
+        }
+    
+        .profile-card {
+            background-color: white;
+            padding: 80px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    
+        .profile-card h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #f18934;
+        }
+    
+        .profile-info p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+    
+        .update-button {
+            background-color: #f78223;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+    
+        .update-button:hover {
+            background-color: #f18934;
+            transform: translateY(-3px);
+        }
+    
+        footer {
+            background-color: #f8874a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    
+        footer a {
+            color: #f7e0cd;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    
+        footer a:hover {
+            text-decoration: underline;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+    
+            nav .links a {
+                margin: 5px 10px;
+            }
+    
+            .profile-card {
+                width: 90%;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+    
+            nav .links a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Recipe App</div>
+        <div class="links">
+            <a href="home.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="profile.html">Profile</a>
+            <a href="videos.html">Video</a>
+            <a href="suggestions.html">Suggestion</a>
+        </div>
+    </nav>
+
+    <section class="profile-container">
+        <div class="profile-card">
+            <h2>My Profile</h2>
+            <div class="profile-info">
+                <p><strong>Name:</strong> <span id="profile-name">Nida Eman</span></p>
+                <p><strong>Email:</strong> <span id="profile-email">nidaeman0987@gmail.com</span></p>
+                <p><strong>Username:</strong> <span id="profile-username">nida123</span></p>
+                <p><strong>Joined:</strong> January 2024</p>
+            </div>
+            <button class="update-button" onclick="window.location.href='update-profile.html'">Update Profile</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Recipe App</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+    </footer>
+
+    <script>
+        // Fetch the updated profile information from localStorage
+        window.onload = function() {
+            const updatedName = localStorage.getItem("name");
+            if (updatedName) document.getElementById("profile-name").textContent = updatedName;
+        };
+    
+        
+    </script>
+</body>
+</html>

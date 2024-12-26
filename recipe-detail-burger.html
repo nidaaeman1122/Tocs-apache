@@ -1,0 +1,184 @@
+<!-- Classic Burger -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Burger Recipe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8ecb5;
+        }
+
+        nav {
+            background-color: #f88242;
+            color: white;
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav .links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav .links a:hover {
+            color: #ffc107;
+        }
+
+        .recipe-header {
+            background-image: url('images/hero-recipe.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 150px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .recipe-header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .recipe-header p {
+            font-size: 18px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .recipe-container {
+            padding: 30px;
+        }
+
+        .ingredients, .instructions {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button-container button {
+            background-color: #f86d22;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #f16114;
+        }
+
+        footer {
+            background-color: #f88242;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #f8ccb4;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Recipe App</div>
+        <div class="links">
+            <a href="home.html">Home</a>
+            <a href="videos.html">Videos</a>
+            <a href="suggestions.html">Suggestions</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </nav>
+
+    <section class="recipe-header">
+        <h1>Classic Burger</h1>
+        <p>Learn to make a juicy, flavorful burger.</p>
+    </section>
+
+    <div class="recipe-container">
+        <div class="ingredients">
+            <h2>Ingredients</h2>
+            <ul>
+                <li>500g Ground Beef</li>
+                <li>4 Burger Buns</li>
+                <li>4 Slices of Cheddar Cheese</li>
+                <li>1 Onion, sliced</li>
+                <li>1 Tomato, sliced</li>
+                <li>Lettuce leaves</li>
+                <li>Ketchup and Mustard</li>
+                <li>Salt and Pepper to taste</li>
+            </ul>
+        </div>
+
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <ol>
+                <li>Form the ground beef into 4 equal-sized patties. Season with salt and pepper.</li>
+                <li>Heat a grill or pan to medium-high and cook the patties for 4-5 minutes per side, adding a slice of cheese in the last minute of cooking.</li>
+                <li>Toast the burger buns lightly on the grill or in a pan.</li>
+                <li>Assemble the burger: place the patty on the bottom bun, followed by onion, tomato, lettuce, ketchup, and mustard.</li>
+                <li>Top with the other half of the bun and enjoy!</li>
+            </ol>
+        </div>
+
+        <div class="button-container">
+            <button onclick="window.location.href='videos.html'">Watch Video</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Recipe App</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+    </footer>
+</body>
+</html>
